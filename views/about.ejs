@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - AutoVerify India</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">
+    <img src="/images/autoverify_logo.svg" alt="AutoVerify Logo" style="height: 40px; margin-right: 10px;">
+    AutoVerify India
+</a>
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/about" class="nav-link">About</a></li>
+                <li><a href="/owner-history" class="nav-link">Owner History</a></li>
+                <li><a href="/mileage-verification" class="nav-link">Vehicle Mileage Verification</a></li>
+                <% if (user) { %>
+                    <li><a href="/dashboard" class="nav-link">Dashboard</a></li>
+                    <% if (user.role === 'admin') { %>
+                        <li><a href="/admin" class="nav-link">Admin</a></li>
+                    <% } %>
+                    <li><a href="/profile" class="nav-link">Profile</a></li>
+                    <li><a href="/logout" class="nav-link">Logout</a></li>
+                <% } else { %>
+                    <li><a href="/signup" class="btn btn-secondary">Sign Up</a></li>
+                    <li><a href="/login" class="btn btn-primary">Login</a></li>
+                <% } %>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- About Content -->
+    <div class="container">
+        <div class="card">
+            <h1>About AutoVerify India</h1>
+            <p>AutoVerify is India's trusted vehicle verification system, providing accurate data by cross-referencing information from multiple trusted sources.</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h2>🎯 Our Mission</h2>
+                <p>To provide reliable mileage verification services that protect consumers from odometer fraud and ensure fair vehicle transactions.</p>
+            </div>
+            <div class="card">
+                <h2>🤝 Data Partners</h2>
+                <p>We partner with leading insurance companies and authorized service centers to access accurate, up-to-date vehicle mileage records.</p>
+            </div>
+            <div class="card">
+                <h2>🔒 Security & Privacy</h2>
+                <p>Your data is protected with industry-standard encryption and we never share personal information without consent.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Technology Stack</h2>
+            <div class="grid">
+                <div>
+                    <h3>Backend</h3>
+                    <p>Node.js with Express.js for robust server-side processing and API integration.</p>
+                </div>
+                <div>
+                    <h3>Frontend</h3>
+                    <p>Modern, responsive web interface with real-time data visualization.</p>
+                </div>
+                <div>
+                    <h3>Data Sources</h3>
+                    <p>Secure API connections to insurance databases and service center systems.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Contact Us</h2>
+            <p>For more information or partnership opportunities, please reach out to our team.</p>
+            <div style="margin-top: 1rem;">
+                <p><strong>Email:</strong> info@mileageverifier.com</p>
+                <p><strong>Phone:</strong> 1-800-VERIFY-MILEAGE</p>
+                <p><strong>Address:</strong> 123 Tech Street, Innovation City, IC 12345</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 AutoVerify India. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

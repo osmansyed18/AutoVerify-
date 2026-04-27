@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - AutoVerify India</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">
+                <img src="/images/autoverify_logo.svg" alt="AutoVerify Logo" style="height: 40px; margin-right: 10px;">
+                AutoVerify India
+            </a>
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/about" class="nav-link">About</a></li>
+                <li><a href="/owner-history" class="nav-link">Owner History</a></li>
+                <li><a href="/mileage-verification" class="nav-link">Vehicle Mileage Verification</a></li>
+                <li><a href="/dashboard" class="nav-link">Dashboard</a></li>
+                <% if (user && user.role === 'admin') { %>
+                    <li><a href="/admin" class="nav-link">Admin</a></li>
+                <% } %>
+                <li><a href="/profile" class="nav-link">Profile</a></li>
+                <li><a href="/logout" class="nav-link">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Profile Content -->
+    <div class="container">
+        <div class="card" style="max-width: 600px; margin: 2rem auto;">
+            <h2>My Profile</h2>
+            
+            <% if (error) { %>
+                <div class="alert alert-danger">
+                    <%= error %>
+                </div>
+            <% } %>
+            
+            <% if (success) { %>
+                <div class="alert alert-success">
+                    <%= success %>
+                </div>
+            <% } %>
+            
+            <form method="POST" action="/profile">
+                <div class="form-group">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" id="name" name="name" class="form-control" 
+                           value="<%= user.name %>" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-control" 
+                           value="<%= user.email %>" readonly>
+                    <small style="color: #666;">Email cannot be changed</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="role" class="form-label">Account Type</label>
+                    <input type="text" id="role" name="role" class="form-control" 
+                           value="<%= user.role.charAt(0).toUpperCase() + user.role.slice(1) %>" readonly>
+                    <small style="color: #666;">Role cannot be changed</small>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Update Profile</button>
+            </form>
+            
+            <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #ddd;">
+                <h3>Account Statistics</h3>
+                <div class="grid">
+                    <div>
+                        <p><strong>Member Since:</strong> <%= new Date().toLocaleDateString() %></p>
+                        <p><strong>Account Status:</strong> <span style="color: #84fab0;">Active</span></p>
+                    </div>
+                    <div>
+                        <p><strong>Verification Count:</strong> 0</p>
+                        <p><strong>Last Login:</strong> <%= new Date().toLocaleString() %></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 AutoVerify India. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

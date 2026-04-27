@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Mileage Verification - AutoVerify India</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">
+    <img src="/images/autoverify_logo.svg" alt="AutoVerify Logo" style="height: 40px; margin-right: 10px;">
+    AutoVerify India
+</a>
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/about" class="nav-link">About</a></li>
+                <li><a href="/owner-history" class="nav-link">Owner History</a></li>
+                <li><a href="/mileage-verification" class="nav-link">Vehicle Mileage Verification</a></li>
+                <li><a href="/dashboard" class="nav-link">Dashboard</a></li>
+                <% if (user && user.role === 'admin') { %>
+                    <li><a href="/admin" class="nav-link">Admin</a></li>
+                <% } %>
+                    <li><a href="/profile" class="nav-link">Profile</a></li>
+                    <li><a href="/logout" class="nav-link">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mileage Verification Content -->
+    <div class="container">
+        <div class="card">
+            <h1>🔍 Vehicle Mileage Verification</h1>
+            <p>Verify vehicle mileage accuracy across multiple data sources including RTO records, insurance companies, and authorized service centers.</p>
+        </div>
+
+        <!-- Verification Form -->
+        <div class="card">
+            <h2>📊 Verify Vehicle Mileage</h2>
+            <form id="verificationForm">
+                <div class="form-group">
+                    <label for="vehicleNumber" class="form-label">Vehicle Registration Number</label>
+                    <input type="text" id="vehicleNumber" name="vehicleNumber" class="form-control" 
+                           placeholder="Enter vehicle number (e.g., MH01AB1234, AP13L5733)" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Verify Mileage</button>
+            </form>
+
+            <!-- Loading Spinner -->
+            <div id="loadingSpinner" class="spinner" style="display: none;"></div>
+
+            <!-- Verification Results -->
+            <div id="verificationResults"></div>
+        </div>
+
+        
+        <!-- Verification Process -->
+        <div class="card">
+            <h2>🔄 Verification Process</h2>
+            <div class="grid">
+                <div>
+                    <h3>📝 Data Collection</h3>
+                    <p>System collects mileage data from multiple sources including RTO records, insurance companies, and authorized service centers.</p>
+                </div>
+                <div>
+                    <h3>🔍 Cross-Verification</h3>
+                    <p>Advanced algorithms compare mileage records across different sources to identify discrepancies and patterns.</p>
+                </div>
+                <div>
+                    <h3>📊 Analysis Report</h3>
+                    <p>Comprehensive report generated with discrepancy analysis, trust score, and recommendations.</p>
+                </div>
+                <div>
+                    <h3>🛡️ Fraud Detection</h3>
+                    <p>AI-powered detection identifies potential odometer tampering and suspicious mileage patterns.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 AutoVerify India. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById('verificationForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const vehicleNumber = document.getElementById('vehicleNumber').value;
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            const resultsDiv = document.getElementById('verificationResults');
+            
+            // Show loading spinner
+            loadingSpinner.style.display = 'block';
+            resultsDiv.innerHTML = '';
+            
+            // Simulate API call
+            setTimeout(() => {
+                displayVerificationResults(vehicleNumber);
+                loadingSpinner.style.display = 'none';
+            }, 2000);
+        });
+        
+        function displayVerificationResults(vehicleNumber) {
+            const resultsDiv = document.getElementById('verificationResults');
+            
+            // Mock data for demonstration
+            const mockData = {
+                'MH01AB1234': {
+                    currentMileage: 45200,
+                    insuranceMileage: 45000,
+                    serviceMileage: 45200,
+                    discrepancy: 200,
+                    isAccurate: true,
+                    trustScore: 95,
+                    serviceRecords: [
+                        { serviceCenter: 'Mumbai Auto Care', mileage: 45200, date: '2024-01-20' },
+                        { serviceCenter: 'QuickFix Mumbai', mileage: 42000, date: '2023-09-15' },
+                        { serviceCenter: 'Mumbai Motors', mileage: 38000, date: '2023-05-10' }
+                    ]
+                },
+                'AP13L5733': {
+                    currentMileage: 108000,
+                    insuranceMileage: 108000,
+                    serviceMileage: 108000,
+                    discrepancy: 0,
+                    isAccurate: true,
+                    trustScore: 98,
+                    serviceRecords: [
+                        { serviceCenter: 'Elite Auto Service', mileage: 108000, date: '2024-03-23' },
+                        { serviceCenter: 'AutoCare Plus', mileage: 104000, date: '2016-03-14' },
+                        { serviceCenter: 'ProCar Maintenance', mileage: 98000, date: '2015-08-22' },
+                        { serviceCenter: 'QuickFix Auto Service', mileage: 92000, date: '2015-01-05' },
+                        { serviceCenter: 'AutoCare Plus', mileage: 85000, date: '2014-05-18' },
+                        { serviceCenter: 'ProCar Maintenance', mileage: 78000, date: '2013-10-10' },
+                        { serviceCenter: 'QuickFix Auto Service', mileage: 72000, date: '2013-03-22' },
+                        { serviceCenter: 'AutoCare Plus', mileage: 65000, date: '2012-08-15' },
+                        { serviceCenter: 'ProCar Maintenance', mileage: 58000, date: '2012-01-28' },
+                        { serviceCenter: 'QuickFix Auto Service', mileage: 52000, date: '2011-06-12' },
+                        { serviceCenter: 'AutoCare Plus', mileage: 45000, date: '2010-11-25' },
+                        { serviceCenter: 'ProCar Maintenance', mileage: 38000, date: '2010-04-18' },
+                        { serviceCenter: 'QuickFix Auto Service', mileage: 32000, date: '2009-09-30' },
+                        { serviceCenter: 'AutoCare Plus', mileage: 25000, date: '2009-02-14' },
+                        { serviceCenter: 'ProCar Maintenance', mileage: 18000, date: '2008-07-22' },
+                        { serviceCenter: 'QuickFix Auto Service', mileage: 12000, date: '2008-01-10' },
+                        { serviceCenter: 'AutoCare Plus', mileage: 5000, date: '2007-06-20' },
+                        { serviceCenter: 'AutoCare Plus', mileage: 2000, date: '2007-03-15' }
+                    ]
+                }
+            };
+            
+            const data = mockData[vehicleNumber.toUpperCase()];
+            
+            if (data) {
+                const alertClass = data.isAccurate ? 'verification-success' : 'verification-warning';
+                const icon = data.isAccurate ? '✅' : '⚠️';
+                
+                resultsDiv.innerHTML = `
+                    <div class="verification-result ${alertClass}">
+                        <h3>${icon} Verification Results</h3>
+                        <div style="text-align: left; margin-top: 2rem;">
+                            <h4>📊 Summary</h4>
+                            <p><strong>Vehicle Number:</strong> ${vehicleNumber}</p>
+                            <p><strong>Current Mileage:</strong> ${data.currentMileage.toLocaleString()} kms</p>
+                            <p><strong>Insurance Mileage:</strong> ${data.insuranceMileage.toLocaleString()} kms</p>
+                            <p><strong>Service Mileage:</strong> ${data.serviceMileage.toLocaleString()} kms</p>
+                            <p><strong>Discrepancy:</strong> ${data.discrepancy.toLocaleString()} kms</p>
+                            <p><strong>Trust Score:</strong> ${data.trustScore}%</p>
+                            <p><strong>Status:</strong> ${data.isAccurate ? 'Mileage appears accurate' : 'Discrepancy detected - further investigation recommended'}</p>
+                            
+                            <h4 style="margin-top: 1.5rem;">🔧 Service Center Records</h4>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Service Center</th>
+                                            <th>Mileage (kms)</th>
+                                            <th>Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        ${data.serviceRecords.map(record => `
+                                            <tr>
+                                                <td>${record.serviceCenter}</td>
+                                                <td>${record.mileage.toLocaleString()}</td>
+                                                <td>${record.date}</td>
+                                            </tr>
+                                        `).join('')}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else {
+                resultsDiv.innerHTML = `
+                    <div class="alert alert-danger">
+                        <strong>Error:</strong> Vehicle not found in our database. Please check the vehicle number and try again.
+                    </div>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

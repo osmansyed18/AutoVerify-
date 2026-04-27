@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - AutoVerify India</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">
+    <img src="/images/autoverify_logo.svg" alt="AutoVerify Logo" style="height: 40px; margin-right: 10px;">
+    AutoVerify India
+</a>
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/about" class="nav-link">About</a></li>
+                <li><a href="/owner-history" class="nav-link">Owner History</a></li>
+                <li><a href="/mileage-verification" class="nav-link">Vehicle Mileage Verification</a></li>
+                <li><a href="/dashboard" class="nav-link">Dashboard</a></li>
+                <li><a href="/admin" class="nav-link">Admin</a></li>
+                <li><a href="/profile" class="nav-link">Profile</a></li>
+                <li><a href="/logout" class="nav-link">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Admin Dashboard Content -->
+    <div class="container">
+        <div class="card">
+            <h1>Admin Dashboard</h1>
+            <p>System administration and management panel</p>
+        </div>
+
+        <!-- System Overview -->
+        <div class="grid">
+            <div class="card">
+                <h3>👥 Total Users</h3>
+                <p style="font-size: 2rem; font-weight: bold; color: #667eea;">247</p>
+                <p>Registered users</p>
+            </div>
+            <div class="card">
+                <h3>🚗 Total Verifications</h3>
+                <p style="font-size: 2rem; font-weight: bold; color: #84fab0;">1,842</p>
+                <p>Completed this month</p>
+            </div>
+            <div class="card">
+                <h3>📊 Fraud Detection Rate</h3>
+                <p style="font-size: 2rem; font-weight: bold; color: #fcb69f;">3.2%</p>
+                <p>Flagged for review</p>
+            </div>
+            <div class="card">
+                <h3>🔗 API Connections</h3>
+                <p style="font-size: 2rem; font-weight: bold; color: #764ba2;">12</p>
+                <p>Active data sources</p>
+            </div>
+        </div>
+
+        <!-- Data Source Management -->
+        <div class="card">
+            <h2>📡 Data Source Management</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Source Type</th>
+                        <th>Provider</th>
+                        <th>Status</th>
+                        <th>Last Sync</th>
+                        <th>Records</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Insurance</td>
+                        <td>SafeAuto Insurance</td>
+                        <td><span style="color: #84fab0;">✅ Active</span></td>
+                        <td>2024-03-23 10:30</td>
+                        <td>45,231</td>
+                        <td><button class="btn btn-secondary" style="padding: 0.25rem 0.75rem; font-size: 0.875rem;">Sync</button></td>
+                    </tr>
+                    <tr>
+                        <td>Insurance</td>
+                        <td>TrustGuard Insurance</td>
+                        <td><span style="color: #84fab0;">✅ Active</span></td>
+                        <td>2024-03-23 09:15</td>
+                        <td>38,942</td>
+                        <td><button class="btn btn-secondary" style="padding: 0.25rem 0.75rem; font-size: 0.875rem;">Sync</button></td>
+                    </tr>
+                    <tr>
+                        <td>Service Center</td>
+                        <td>QuickFix Auto Service</td>
+                        <td><span style="color: #84fab0;">✅ Active</span></td>
+                        <td>2024-03-23 11:00</td>
+                        <td>12,456</td>
+                        <td><button class="btn btn-secondary" style="padding: 0.25rem 0.75rem; font-size: 0.875rem;">Sync</button></td>
+                    </tr>
+                    <tr>
+                        <td>Service Center</td>
+                        <td>ProCar Maintenance</td>
+                        <td><span style="color: #fcb69f;">⚠️ Pending</span></td>
+                        <td>2024-03-22 16:45</td>
+                        <td>8,234</td>
+                        <td><button class="btn btn-secondary" style="padding: 0.25rem 0.75rem; font-size: 0.875rem;">Sync</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- User Management -->
+        <div class="card">
+            <h2>👥 User Management</h2>
+            <div style="margin-bottom: 1rem;">
+                <button class="btn btn-primary">Add New User</button>
+                <button class="btn btn-secondary">Export Users</button>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Role</th>
+                        <th>Verifications</th>
+                        <th>Last Login</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>john_doe</td>
+                        <td>User</td>
+                        <td>142</td>
+                        <td>2024-03-23 08:30</td>
+                        <td><span style="color: #84fab0;">✅ Active</span></td>
+                        <td>
+                            <button class="btn btn-secondary" style="padding: 0.25rem 0.75rem; font-size: 0.875rem;">Edit</button>
+                            <button class="btn btn-secondary" style="padding: 0.25rem 0.75rem; font-size: 0.875rem;">Disable</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>jane_smith</td>
+                        <td>User</td>
+                        <td>89</td>
+                        <td>2024-03-22 14:15</td>
+                        <td><span style="color: #84fab0;">✅ Active</span></td>
+                        <td>
+                            <button class="btn btn-secondary" style="padding: 0.25rem 0.75rem; font-size: 0.875rem;">Edit</button>
+                            <button class="btn btn-secondary" style="padding: 0.25rem 0.75rem; font-size: 0.875rem;">Disable</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>mike_admin</td>
+                        <td>Admin</td>
+                        <td>234</td>
+                        <td>2024-03-23 10:00</td>
+                        <td><span style="color: #84fab0;">✅ Active</span></td>
+                        <td>
+                            <button class="btn btn-secondary" style="padding: 0.25rem 0.75rem; font-size: 0.875rem;">Edit</button>
+                            <button class="btn btn-secondary" style="padding: 0.25rem 0.75rem; font-size: 0.875rem;">Disable</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- System Logs -->
+        <div class="card">
+            <h2>📋 System Logs</h2>
+            <div style="margin-bottom: 1rem;">
+                <button class="btn btn-secondary">Refresh Logs</button>
+                <button class="btn btn-secondary">Download Logs</button>
+            </div>
+            <div style="background: #f8f9fa; padding: 1rem; border-radius: 10px; font-family: monospace; font-size: 0.875rem; max-height: 300px; overflow-y: auto;">
+                <div style="color: #666;">[2024-03-23 11:30:15] INFO: User admin logged in successfully</div>
+                <div style="color: #666;">[2024-03-23 11:25:42] INFO: Mileage verification completed for vehicle ABC123</div>
+                <div style="color: #84fab0;">[2024-03-23 11:20:18] SUCCESS: Data sync completed with SafeAuto Insurance</div>
+                <div style="color: #666;">[2024-03-23 11:15:33] INFO: New user registration: john_doe</div>
+                <div style="color: #fcb69f;">[2024-03-23 11:10:27] WARNING: API connection timeout with ProCar Maintenance</div>
+                <div style="color: #666;">[2024-03-23 11:05:14] INFO: Mileage verification completed for vehicle XYZ789</div>
+                <div style="color: #84fab0;">[2024-03-23 11:00:00] SUCCESS: System backup completed successfully</div>
+                <div style="color: #666;">[2024-03-23 10:55:22] INFO: User jane_smith logged out</div>
+                <div style="color: #fcb69f;">[2024-03-23 10:45:18] WARNING: Mileage discrepancy detected for vehicle DEF456</div>
+            </div>
+        </div>
+
+        <!-- Settings -->
+        <div class="card">
+            <h2>⚙️ System Settings</h2>
+            <div class="grid">
+                <div>
+                    <h3>Verification Thresholds</h3>
+                    <div class="form-group">
+                        <label class="form-label">Mileage Discrepancy Threshold (miles)</label>
+                        <input type="number" class="form-control" value="100">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Auto-Flag Threshold (miles)</label>
+                        <input type="number" class="form-control" value="500">
+                    </div>
+                </div>
+                <div>
+                    <h3>Data Sync Settings</h3>
+                    <div class="form-group">
+                        <label class="form-label">Auto-Sync Interval (hours)</label>
+                        <input type="number" class="form-control" value="6">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Data Retention Period (days)</label>
+                        <input type="number" class="form-control" value="365">
+                    </div>
+                </div>
+                <div>
+                    <h3>Notification Settings</h3>
+                    <div class="form-group">
+                        <label class="form-label">
+                            <input type="checkbox" checked> Email notifications for discrepancies
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">
+                            <input type="checkbox" checked> Daily system reports
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 2rem;">
+                <button class="btn btn-primary">Save Settings</button>
+                <button class="btn btn-secondary">Reset to Defaults</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 AutoVerify India. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

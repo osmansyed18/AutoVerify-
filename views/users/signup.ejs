@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - AutoVerify India</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">
+                <img src="/images/autoverify_logo.svg" alt="AutoVerify Logo" style="height: 40px; margin-right: 10px;">
+                AutoVerify India
+            </a>
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/about" class="nav-link">About</a></li>
+                <li><a href="/owner-history" class="nav-link">Owner History</a></li>
+                <li><a href="/mileage-verification" class="nav-link">Vehicle Mileage Verification</a></li>
+                <li><a href="/login" class="btn btn-secondary">Login</a></li>
+                <li><a href="/signup" class="btn btn-primary">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Signup Form -->
+    <div class="container">
+        <div class="card" style="max-width: 500px; margin: 2rem auto;">
+            <h2>Create Your Account</h2>
+            <p>Join AutoVerify India to access vehicle verification services</p>
+            
+            <% if (error) { %>
+                <div class="alert alert-danger">
+                    <%= error %>
+                </div>
+            <% } %>
+            
+            <form method="POST" action="/signup">
+                <div class="form-group">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" id="name" name="name" class="form-control" 
+                           placeholder="Enter your full name" value="<%= typeof name !== 'undefined' ? name : '' %>" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-control" 
+                           placeholder="Enter your email" value="<%= typeof email !== 'undefined' ? email : '' %>" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" name="password" class="form-control" 
+                           placeholder="Enter your password (min 6 characters)" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" 
+                           placeholder="Confirm your password" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+            </form>
+            
+            <div style="text-align: center; margin-top: 1.5rem;">
+                <p>Already have an account? <a href="/login">Login here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 AutoVerify India. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

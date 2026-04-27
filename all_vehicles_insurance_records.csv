@@ -1,0 +1,24 @@
+Vehicle ID,Insurance Company,Policy Number,Start Date,Expiry Date,Premium Amount,Coverage Type,Insured Value,Claim History,Status
+MH01AB1234,ICICI Lombard,ICICI-MH01AB1234-2018,2018-03-15,2024-12-31,15000.00,Comprehensive,550000.00,0 claims,Active
+DL02CD5678,HDFC Ergo,HDFC-DL02CD5678-2019,2019-06-20,2025-02-28,18000.00,Comprehensive,620000.00,0 claims,Active
+KA03EF9012,Bajaj Allianz,BAJAJ-KA03EF9012-2020,2020-09-10,2024-11-30,22000.00,Comprehensive,850000.00,1 minor claim,Active
+TN04GH3456,Royal Sundaram,ROYAL-TN04GH3456-2017,2017-10-15,2024-09-15,16000.00,Comprehensive,480000.00,0 claims,Active
+GJ05IJ7890,Reliance General,REL-GJ05IJ7890-2021,2021-11-15,2025-06-30,19000.00,Comprehensive,680000.00,0 claims,Active
+AP13L5733,New India Assurance,NIA-AP13L5733-2007,2007-03-15,2024-08-31,12000.00,Third Party,320000.00,2 claims,Active
+RJ06KL1234,United India Insurance,UII-RJ06KL1234-2019,2019-08-15,2026-05-10,17000.00,Comprehensive,720000.00,0 claims,Active
+WB07MN5678,National Insurance,NIC-WB07MN5678-2020,2020-10-15,2025-03-15,20000.00,Comprehensive,580000.00,0 claims,Active
+UP08OP9012,Oriental Insurance,ORI-UP08OP9012-2018,2018-09-15,2024-10-20,21000.00,Comprehensive,750000.00,1 major claim,Active
+PB09QR3456,The New India Assurance,NIA-PB09QR3456-2021,2021-11-15,2025-08-10,23000.00,Comprehensive,690000.00,0 claims,Active
+HR10ST7890,Bajaj Allianz General,BAJAJ-HR10ST7890-2022,2022-09-15,2025-12-25,25000.00,Comprehensive,820000.00,0 claims,Active
+CT11UV1234,ICICI Lombard General,ICICI-CT11UV1234-2019,2019-10-15,2025-01-30,18000.00,Comprehensive,550000.00,0 claims,Active
+OR12WX5678,HDFC Ergo General,HDFC-OR12WX5678-2020,2020-11-15,2025-05-18,19000.00,Comprehensive,590000.00,0 claims,Active
+JH13YZ9012,Reliance General,REL-JH13YZ9012-2018,2018-10-15,2024-11-10,17000.00,Comprehensive,520000.00,0 claims,Active
+AS14AB3456,Royal Sundaram General,ROYAL-AS14AB3456-2021,2021-10-15,2025-09-25,28000.00,Comprehensive,1200000.00,0 claims,Active
+ML15CD7890,United India Insurance Company,UII-ML15CD7890-2019,2019-10-15,2025-02-20,16000.00,Comprehensive,450000.00,0 claims,Active
+GJ16EF1234,National Insurance Company Limited,NIC-GJ16EF1234-2022,2022-09-15,2026-01-15,24000.00,Comprehensive,480000.00,0 claims,Active
+KA17GH5678,Oriental Insurance Company Limited,ORI-KA17GH5678-2017,2017-10-15,2024-12-31,20000.00,Comprehensive,780000.00,2 claims,Active
+TN18IJ9012,The New India Assurance Company Limited,NIA-TN18IJ9012-2020,2020-10-15,2025-07-18,21000.00,Comprehensive,520000.00,0 claims,Active
+MH19KL3456,Bajaj Allianz Insurance Company Limited,BAJAJ-MH19KL3456-2021,2021-10-15,2025-10-30,26000.00,Comprehensive,850000.00,0 claims,Active
+AP13AE4397,HDFC Ergo General Insurance,HDFC-AP13AE4397-2019,2019-08-15,2025-03-15,18000.00,Comprehensive,620000.00,0 claims,Active
+TS08HQ7117,ICICI Lombard General Insurance,ICICI-TS08HQ7117-2020,2020-10-15,2025-06-30,22000.00,Comprehensive,750000.00,0 claims,Active
+TG13E7117,Reliance General Insurance,REL-TG13E7117-2018,2018-10-15,2024-12-25,17000.00,Comprehensive,480000.00,1 minor claim,Active

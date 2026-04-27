@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - AutoVerify India</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">
+    <img src="/images/autoverify_logo.svg" alt="AutoVerify Logo" style="height: 40px; margin-right: 10px;">
+    AutoVerify India
+</a>
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/about" class="nav-link">About</a></li>
+                <li><a href="/owner-history" class="nav-link">Owner History</a></li>
+                <li><a href="/mileage-verification" class="nav-link">Vehicle Mileage Verification</a></li>
+                <li><a href="/dashboard" class="nav-link">Dashboard</a></li>
+                <% if (user && user.role === 'admin') { %>
+                    <li><a href="/admin" class="nav-link">Admin</a></li>
+                <% } %>
+                <li><a href="/profile" class="nav-link">Profile</a></li>
+                <li><a href="/logout" class="nav-link">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <div class="container">
+        <div class="card">
+            <h1>Welcome, <%= user.name %>!</h1>
+            <p>Verify vehicle mileage using our comprehensive system.</p>
+        </div>
+
+        <!-- Mileage Verification Form -->
+        <div class="card">
+            <h2>🔍 Verify Vehicle Mileage</h2>
+            <form id="verificationForm">
+                <div class="form-group">
+                    <label for="vehicleId" class="form-label">Vehicle ID / License Plate</label>
+                    <input type="text" id="vehicleId" name="vehicleId" class="form-control" 
+                           placeholder="Enter vehicle number (e.g., MH01AB1234, AP13L5733)" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Verify Mileage</button>
+            </form>
+
+            <!-- Loading Spinner -->
+            <div id="loadingSpinner" class="spinner" style="display: none;"></div>
+
+            <!-- Verification Results -->
+            <div id="verificationResults"></div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="grid">
+            <div class="card">
+                <h3>📊 Today's Verifications</h3>
+                <p style="font-size: 2rem; font-weight: bold; color: #667eea;">12</p>
+                <p>Vehicle checks completed</p>
+            </div>
+            <div class="card">
+                <h3>✅ Accuracy Rate</h3>
+                <p style="font-size: 2rem; font-weight: bold; color: #84fab0;">94%</p>
+                <p>Mileage accuracy confirmed</p>
+            </div>
+            <div class="card">
+                <h3>⚠️ Discrepancies Found</h3>
+                <p style="font-size: 2rem; font-weight: bold; color: #fcb69f;">3</p>
+                <p>Require further investigation</p>
+            </div>
+        </div>
+
+            </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 AutoVerify India. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById('verificationForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const vehicleId = document.getElementById('vehicleId').value;
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            const resultsDiv = document.getElementById('verificationResults');
+            
+            // Show loading spinner
+            loadingSpinner.style.display = 'block';
+            resultsDiv.innerHTML = '';
+            
+            try {
+                const response = await fetch(`/verify-mileage?vehicleId=${vehicleId}`);
+                const data = await response.json();
+                
+                if (response.ok) {
+                    displayResults(data);
+                } else {
+                    resultsDiv.innerHTML = `
+                        <div class="alert alert-danger">
+                            <strong>Error:</strong> ${data.error}
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultsDiv.innerHTML = `
+                    <div class="alert alert-danger">
+                        <strong>Error:</strong> Failed to verify mileage. Please try again.
+                    </div>
+                `;
+            } finally {
+                loadingSpinner.style.display = 'none';
+            }
+        });
+        
+        function displayResults(data) {
+            const resultsDiv = document.getElementById('verificationResults');
+            const alertClass = data.isAccurate ? 'alert-success' : 'alert-warning';
+            const icon = data.isAccurate ? '✅' : '⚠️';
+            
+            resultsDiv.innerHTML = `
+                <div class="verification-result ${data.isAccurate ? 'verification-success' : 'verification-warning'}">
+                    <h3>${icon} Verification Results</h3>
+                    <div style="text-align: left; margin-top: 2rem;">
+                        <h4>Vehicle Information</h4>
+                        <p><strong>Vehicle ID:</strong> ${data.vehicleId}</p>
+                        
+                        <h4 style="margin-top: 1rem;">Insurance Data</h4>
+                        <p><strong>Company:</strong> ${data.insuranceData.company}</p>
+                        <p><strong>Mileage:</strong> ${data.insuranceData.mileage.toLocaleString()} kms</p>
+                        <p><strong>Last Updated:</strong> ${data.insuranceData.lastUpdated}</p>
+                        
+                        <h4 style="margin-top: 1rem;">Service Center Records</h4>
+                        ${data.serviceData.length > 0 ? `
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Service Center</th>
+                                            <th>Mileage (kms)</th>
+                                            <th>Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        ${data.serviceData.map(service => `
+                                            <tr>
+                                                <td>${service.serviceCenter}</td>
+                                                <td>${service.mileage.toLocaleString()}</td>
+                                                <td>${service.serviceDate}</td>
+                                            </tr>
+                                        `).join('')}
+                                    </tbody>
+                                </table>
+                            </div>
+                        ` : '<p>No service records found</p>'}
+                        
+                        <h4 style="margin-top: 1rem;">Analysis</h4>
+                        <p><strong>Discrepancy:</strong> ${data.discrepancy.toLocaleString()} kms</p>
+                        <p><strong>Status:</strong> ${data.recommendation}</p>
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>

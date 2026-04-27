@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner History - AutoVerify India</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">
+    <img src="/images/autoverify_logo.svg" alt="AutoVerify Logo" style="height: 40px; margin-right: 10px;">
+    AutoVerify India
+</a>
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/about" class="nav-link">About</a></li>
+                <li><a href="/owner-history" class="nav-link">Owner History</a></li>
+                <li><a href="/mileage-verification" class="nav-link">Vehicle Mileage Verification</a></li>
+                <li><a href="/dashboard" class="nav-link">Dashboard</a></li>
+                <% if (user && user.role === 'admin') { %>
+                    <li><a href="/admin" class="nav-link">Admin</a></li>
+                <% } %>
+                    <li><a href="/profile" class="nav-link">Profile</a></li>
+                    <li><a href="/logout" class="nav-link">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Owner History Content -->
+    <div class="container">
+        <div class="card">
+            <h1>👤 Vehicle Owner History</h1>
+            <p>Access comprehensive vehicle ownership details including manufacturing information, registration status, and insurance details.</p>
+        </div>
+
+        <!-- Search Form -->
+        <div class="card">
+            <h2>🔍 Search Vehicle History</h2>
+            <form id="ownerHistoryForm">
+                <div class="form-group">
+                    <label for="vehicleNumber" class="form-label">Vehicle Registration Number</label>
+                    <input type="text" id="vehicleNumber" name="vehicleNumber" class="form-control" 
+                           placeholder="Enter vehicle number (e.g., MH01AB1234)" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Search History</button>
+            </form>
+
+            <!-- Loading Spinner -->
+            <div id="loadingSpinner" class="spinner" style="display: none;"></div>
+
+            <!-- Results -->
+            <div id="ownerHistoryResults"></div>
+        </div>
+
+        <!-- Sample Vehicle Records -->
+        <div class="card">
+            <h2>📋 Available Vehicle Records</h2>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Vehicle Number</th>
+                            <th>Owner Name</th>
+                            <th>Manufacturing Year</th>
+                            <th>Registration State</th>
+                            <th>Vehicle Type</th>
+                            <th>Make & Model</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>MH01AB1234</strong></td>
+                            <td>Rajesh Kumar</td>
+                            <td>2018</td>
+                            <td>Maharashtra</td>
+                            <td>Car</td>
+                            <td>Maruti Swift</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DL02CD5678</strong></td>
+                            <td>Priya Sharma</td>
+                            <td>2019</td>
+                            <td>Delhi</td>
+                            <td>Car</td>
+                            <td>Hyundai i20</td>
+                        </tr>
+                        <tr>
+                            <td><strong>KA03EF9012</strong></td>
+                            <td>Amit Reddy</td>
+                            <td>2020</td>
+                            <td>Karnataka</td>
+                            <td>SUV</td>
+                            <td>Mahindra XUV500</td>
+                        </tr>
+                        <tr>
+                            <td><strong>TN04GH3456</strong></td>
+                            <td>Lakshmi Narayanan</td>
+                            <td>2017</td>
+                            <td>Tamil Nadu</td>
+                            <td>Car</td>
+                            <td>Tata Nexon</td>
+                        </tr>
+                        <tr>
+                            <td><strong>GJ05IJ7890</strong></td>
+                            <td>Rakesh Patel</td>
+                            <td>2021</td>
+                            <td>Gujarat</td>
+                            <td>Car</td>
+                            <td>Honda City</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AP13L5733</strong></td>
+                            <td>John Smith</td>
+                            <td>2007</td>
+                            <td>Andhra Pradesh</td>
+                            <td>Car</td>
+                            <td>Toyota Innova</td>
+                        </tr>
+                        <tr>
+                            <td><strong>RJ06KL1234</strong></td>
+                            <td>Vikram Singh</td>
+                            <td>2019</td>
+                            <td>Rajasthan</td>
+                            <td>SUV</td>
+                            <td>Ford Ecosport</td>
+                        </tr>
+                        <tr>
+                            <td><strong>WB07MN5678</strong></td>
+                            <td>Anjali Banerjee</td>
+                            <td>2020</td>
+                            <td>West Bengal</td>
+                            <td>Car</td>
+                            <td>Maruti Baleno</td>
+                        </tr>
+                        <tr>
+                            <td><strong>UP08OP9012</strong></td>
+                            <td>Rahul Verma</td>
+                            <td>2018</td>
+                            <td>Uttar Pradesh</td>
+                            <td>Car</td>
+                            <td>Hyundai Creta</td>
+                        </tr>
+                        <tr>
+                            <td><strong>PB09QR3456</strong></td>
+                            <td>Gurpreet Kaur</td>
+                            <td>2021</td>
+                            <td>Punjab</td>
+                            <td>Car</td>
+                            <td>Kia Seltos</td>
+                        </tr>
+                        <tr>
+                            <td><strong>HR10ST7890</strong></td>
+                            <td>Ankit Sharma</td>
+                            <td>2022</td>
+                            <td>Haryana</td>
+                            <td>SUV</td>
+                            <td>Tata Harrier</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CT11UV1234</strong></td>
+                            <td>Prakash Rao</td>
+                            <td>2019</td>
+                            <td>Chhattisgarh</td>
+                            <td>Car</td>
+                            <td>Mahindra Thar</td>
+                        </tr>
+                        <tr>
+                            <td><strong>OR12WX5678</strong></td>
+                            <td>Sabyasachi Mishra</td>
+                            <td>2020</td>
+                            <td>Odisha</td>
+                            <td>Car</td>
+                            <td>Honda WR-V</td>
+                        </tr>
+                        <tr>
+                            <td><strong>JH13YZ9012</strong></td>
+                            <td>Kumar Ravi</td>
+                            <td>2018</td>
+                            <td>Jharkhand</td>
+                            <td>Car</td>
+                            <td>Maruti Brezza</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AS14AB3456</strong></td>
+                            <td>Bhabesh Kalita</td>
+                            <td>2021</td>
+                            <td>Assam</td>
+                            <td>SUV</td>
+                            <td>Toyota Fortuner</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ML15CD7890</strong></td>
+                            <td>Lalnunmawia</td>
+                            <td>2019</td>
+                            <td>Meghalaya</td>
+                            <td>Car</td>
+                            <td>Hyundai Venue</td>
+                        </tr>
+                        <tr>
+                            <td><strong>GJ16EF1234</strong></td>
+                            <td>Nitin Mehta</td>
+                            <td>2022</td>
+                            <td>Gujarat</td>
+                            <td>Car</td>
+                            <td>Tata Punch</td>
+                        </tr>
+                        <tr>
+                            <td><strong>KA17GH5678</strong></td>
+                            <td>Deepika Rao</td>
+                            <td>2017</td>
+                            <td>Karnataka</td>
+                            <td>SUV</td>
+                            <td>Jeep Compass</td>
+                        </tr>
+                        <tr>
+                            <td><strong>TN18IJ9012</strong></td>
+                            <td>Mohan Kumar</td>
+                            <td>2020</td>
+                            <td>Tamil Nadu</td>
+                            <td>Car</td>
+                            <td>Renault Kiger</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MH19KL3456</strong></td>
+                            <td>Sanjay Patil</td>
+                            <td>2021</td>
+                            <td>Maharashtra</td>
+                            <td>SUV</td>
+                            <td>MG Hector</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AP13AE4397</strong></td>
+                            <td>Srinivas Reddy</td>
+                            <td>2019</td>
+                            <td>Andhra Pradesh</td>
+                            <td>Car</td>
+                            <td>Hyundai Venue</td>
+                        </tr>
+                        <tr>
+                            <td><strong>TS08HQ7117</strong></td>
+                            <td>Ramesh Kumar</td>
+                            <td>2020</td>
+                            <td>Telangana</td>
+                            <td>SUV</td>
+                            <td>Kia Seltos</td>
+                        </tr>
+                        <tr>
+                            <td><strong>TG13E7117</strong></td>
+                            <td>Anand Sharma</td>
+                            <td>2018</td>
+                            <td>Telangana</td>
+                            <td>Car</td>
+                            <td>Maruti Baleno</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="margin-top: 1rem; color: #666;">
+                <strong>Total Vehicles:</strong> 24 | <strong>States Covered:</strong> 15+ | 
+                <strong>Vehicle Types:</strong> Cars, SUVs | <strong>Years:</strong> 2007-2022
+            </p>
+        </div>
+
+        
+        <!-- Detailed Information Section -->
+        <div class="card">
+            <h2>📄 Information Available</h2>
+            <div class="grid">
+                <div>
+                    <h3>👤 Owner Details</h3>
+                    <ul>
+                        <li>Current owner name and address</li>
+                        <li>Previous ownership history</li>
+                        <li>Ownership transfer dates</li>
+                        <li>Owner verification status</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>🏭 Vehicle Information</h3>
+                    <ul>
+                        <li>Manufacturing year and date</li>
+                        <li>Make, model, and variant</li>
+                        <li>Vehicle type (Car, Bike, SUV, etc.)</li>
+                        <li>Engine and chassis number</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>📋 Registration Details</h3>
+                    <ul>
+                        <li>Registration state and RTO</li>
+                        <li>Registration date</li>
+                        <li>Registration expiry date</li>
+                        <li>Fitness certificate validity</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>🛡️ Insurance Information</h3>
+                    <ul>
+                        <li>Insurance company and policy number</li>
+                        <li>Insurance type (Comprehensive, Third Party)</li>
+                        <li>Policy expiry date</li>
+                        <li>Claim history</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 AutoVerify India. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById('ownerHistoryForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const vehicleNumber = document.getElementById('vehicleNumber').value;
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            const resultsDiv = document.getElementById('ownerHistoryResults');
+            
+            loadingSpinner.style.display = 'block';
+            resultsDiv.innerHTML = '';
+            
+            try {
+                const response = await fetch(`/api/vehicles/owner-history?vehicleId=${vehicleNumber}`);
+                const result = await response.json();
+                
+                if (result.success) {
+                    displayOwnerHistory(result.data);
+                } else {
+                    resultsDiv.innerHTML = `
+                        <div class="alert alert-danger">
+                            <strong>Error:</strong> ${result.error || 'Vehicle history not found. Please check the vehicle number and try again.'}
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                resultsDiv.innerHTML = `
+                    <div class="alert alert-danger">
+                        <strong>Error:</strong> Failed to fetch vehicle history. Please try again.
+                    </div>
+                `;
+            }
+            
+            loadingSpinner.style.display = 'none';
+        });
+        
+        function displayOwnerHistory(data) {
+            const resultsDiv = document.getElementById('ownerHistoryResults');
+            
+            resultsDiv.innerHTML = `
+                <div class="card">
+                    <h3>📋 Vehicle Owner History</h3>
+                    <div class="grid">
+                        <div>
+                            <h4>👤 Owner Details</h4>
+                            <p><strong>Owner Name:</strong> ${data.ownerName}</p>
+                            <p><strong>Vehicle Number:</strong> ${data.vehicleId}</p>
+                        </div>
+                        <div>
+                            <h4>🏭 Vehicle Details</h4>
+                            <p><strong>Make:</strong> ${data.vehicleInfo.make}</p>
+                            <p><strong>Model:</strong> ${data.vehicleInfo.model}</p>
+                            <p><strong>Manufacturing Year:</strong> ${data.vehicleInfo.manufacturingYear}</p>
+                            <p><strong>Vehicle Type:</strong> ${data.vehicleInfo.vehicleType}</p>
+                            <p><strong>Fuel Type:</strong> ${data.vehicleInfo.fuelType}</p>
+                            <p><strong>Color:</strong> ${data.vehicleInfo.color}</p>
+                        </div>
+                        <div>
+                            <h4>📋 Registration Information</h4>
+                            <p><strong>Registration State:</strong> ${data.registrationDetails.state}</p>
+                            <p><strong>Registration Expiry:</strong> ${data.registrationDetails.expiryDate}</p>
+                        </div>
+                        <div>
+                            <h4>🛡️ Insurance Information</h4>
+                            <p><strong>Insurance Expiry:</strong> ${data.insuranceDetails.expiryDate}</p>
+                        </div>
+                        <div>
+                            <h4>🔧 Technical Details</h4>
+                            <p><strong>Engine Number:</strong> ${data.technicalDetails.engineNumber}</p>
+                            <p><strong>Chassis Number:</strong> ${data.technicalDetails.chassisNumber}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>

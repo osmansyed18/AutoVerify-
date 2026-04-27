@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoVerify India - Home</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">
+    <img src="/images/autoverify_logo.svg" alt="AutoVerify Logo" style="height: 40px; margin-right: 10px;">
+    AutoVerify India
+</a>
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/about" class="nav-link">About</a></li>
+                <li><a href="/owner-history" class="nav-link">Owner History</a></li>
+                <li><a href="/mileage-verification" class="nav-link">Vehicle Mileage Verification</a></li>
+                <% if (user) { %>
+                    <li><a href="/dashboard" class="nav-link">Dashboard</a></li>
+                    <% if (user.role === 'admin') { %>
+                        <li><a href="/admin" class="nav-link">Admin</a></li>
+                    <% } %>
+                    <li><a href="/profile" class="nav-link">Profile</a></li>
+                    <li><a href="/logout" class="nav-link">Logout</a></li>
+                <% } else { %>
+                    <li><a href="/signup" class="btn btn-secondary">Sign Up</a></li>
+                    <li><a href="/login" class="btn btn-primary">Login</a></li>
+                <% } %>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <h1>AutoVerify India - Trusted Vehicle Verification</h1>
+            <p>Verify vehicle details and mileage accuracy across all Indian states with trusted data from RTOs, insurance companies and service centers</p>
+            <% if (!user) { %>
+                <a href="/login" class="btn btn-primary">Get Started</a>
+            <% } else { %>
+                <a href="/dashboard" class="btn btn-primary">Go to Dashboard</a>
+            <% } %>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="container">
+        <div class="grid">
+            <div class="card">
+                <h2>🔒 Trusted Verification</h2>
+                <p>AutoVerify provides reliable vehicle verification with authenticated data from official sources.</p>
+            </div>
+            <div class="card">
+                <h2>🇮🇳 Nationwide Coverage</h2>
+                <p>Verify vehicles from all Indian states - Mumbai, Delhi, Bangalore, Chennai, Ahmedabad and more.</p>
+            </div>
+            <div class="card">
+                <h2>🛡️ Fraud Protection</h2>
+                <p>AutoVerify identifies discrepancies to prevent fraud and protect buyers.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- How It Works -->
+    <div class="container">
+        <div class="card">
+            <h2>How It Works</h2>
+            <div class="grid">
+                <div>
+                    <h3>1. Enter Vehicle Number</h3>
+                    <p>Input the Indian vehicle registration number (e.g., MH01AB1234, DL02CD5678).</p>
+                </div>
+                <div>
+                    <h3>2. Data Collection</h3>
+                    <p>System retrieves data from RTO, insurance companies, and authorized service centers.</p>
+                </div>
+                <div>
+                    <h3>3. Cross-Verification</h3>
+                    <p>Compare mileage records across multiple sources for accuracy.</p>
+                </div>
+                <div>
+                    <h3>4. Generate Report</h3>
+                    <p>Receive comprehensive verification report with discrepancy analysis.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 AutoVerify India. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

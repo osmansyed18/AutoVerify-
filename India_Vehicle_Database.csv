@@ -1,0 +1,52 @@
+Vehicle ID,State,RTO,Make,Model,Year,Current Mileage,Insurance Company,Last Service Date,Service Center
+MH01AB1234,Maharashtra,Mumbai RTO,Maruti Suzuki,Swift,2018,45000,ICICI Lombard Insurance,2024-01-20,Mumbai Auto Care
+DL02CD5678,Delhi,Delhi RTO,Hyundai,i20,2019,32000,HDFC Ergo Insurance,2024-02-25,Delhi Car Service
+KA03EF9012,Karnataka,Bangalore RTO,Tiago,Nexon,2020,67000,Bajaj Allianz Insurance,2024-03-10,Bangalore Motors
+TN04GH3456,Tamil Nadu,Chennai RTO,Honda,City,2017,89000,National Insurance,2024-02-28,Chennai Auto Works
+GJ05IJ7890,Gujarat,Ahmedabad RTO,Mahindra,Scorpio,2018,54000,United India Insurance,2024-03-15,Ahmedabad Garage
+AP13L5733,Andhra Pradesh,Andhra Pradesh RTO,Toyota,Camry,2007,108000,Premium Auto Insurance,2024-03-23,Elite Auto Service
+WB06KL2345,West Bengal,Kolkata RTO,Tata,Nexon,2021,28000,Reliance General Insurance,2024-01-15,Kolkata Auto Care
+UP07MN6789,Uttar Pradesh,Lucknow RTO,Maruti Suzuki,Baleno,2019,41000,New India Assurance,2024-02-10,Lucknow Motors
+RJ08OP3456,Rajasthan,Jaipur RTO,Honda,Amaze,2020,35000,Oriental Insurance,2024-03-05,Jaipur Car Service
+MP09QR7890,Madhya Pradesh,Bhopal RTO,Tiago,Altroz,2021,22000,Universal Sompo,2024-01-28,Bhopal Auto Works
+HR10ST1234,Haryana,Chandigarh RTO,Hyundai,Verna,2018,58000,National Insurance,2024-02-20,Chandigarh Garage
+Punjab11UV5678,Punjab,Chandigarh RTO,Maruti Suzuki,Ciaz,2019,43000,Bajaj Allianz Insurance,2024-03-12,Mohali Motors
+Bihar12WX8901,Bihar,Patna RTO,Tata,Tiago,2020,31000,ICICI Lombard Insurance,2024-01-18,Patna Auto Care
+Odisha13YZ2345,Odisha,Bhubaneswar RTO,Honda,WR-V,2019,48000,HDFC Ergo Insurance,2024-02-15,Bhubaneswar Motors
+Assam14AB6789,Assam,Guwahati RTO,Maruti Suzuki,Vitara Brezza,2020,37000,United India Insurance,2024-03-08,Guwahati Auto Works
+Kerala15CD1234,Kerala,Thiruvananthapuram RTO,Hyundai,Creta,2018,62000,National Insurance,2024-01-22,Thiruvananthapuram Garage
+Telangana16EF5678,Telangana,Hyderabad RTO,Tata,Harrier,2021,26000,Bajaj Allianz Insurance,2024-02-28,Hyderabad Motors
+Rajasthan17GH8901,Rajasthan,Udaipur RTO,Maruti Suzuki,Ertiga,2019,51000,ICICI Lombard Insurance,2024-03-18,Udaipur Auto Care
+Gujarat18IJ2345,Gujarat,Surat RTO,Honda,CR-V,2017,75000,HDFC Ergo Insurance,2024-01-30,Surat Car Service
+Maharashtra19KL6789,Maharashtra,Pune RTO,Tiago,Safari,2020,33000,United India Insurance,2024-02-25,Pune Motors
+Delhi20MN1234,Delhi,Gurgaon RTO,Hyundai,Alcazar,2021,24000,National Insurance,2024-03-10,Gurgaon Auto Works
+Karnataka21OP5678,Karnataka,Mysore RTO,Maruti Suzuki,S-Cross,2018,69000,Bajaj Allianz Insurance,2024-01-12,Mysore Motors
+Tamil Nadu22QR8901,Tamil Nadu,Coimbatore RTO,Honda,Civic,2019,44000,ICICI Lombard Insurance,2024-02-18,Coimbatore Auto Care
+West Bengal23ST2345,West Bengal,Siliguri RTO,Tata,Punch,2021,21000,HDFC Ergo Insurance,2024-03-22,Siliguri Car Service
+Uttar Pradesh24UV6789,Uttar Pradesh,Kanpur RTO,Maruti Suzuki,XL6,2020,38000,United India Insurance,2024-01-25,Kanpur Motors
+Rajasthan25WX1234,Rajasthan,Kota RTO,Hyundai,Aura,2021,29000,National Insurance,2024-02-08,Kota Auto Works
+Madhya Pradesh26YZ5678,Madhya Pradesh,Indore RTO,Tiago,Nexon EV,2022,18000,Bajaj Allianz Insurance,2024-03-15,Indore Motors
+Haryana27AB8901,Haryana,Faridabad RTO,Honda,Jazz,2019,46000,ICICI Lombard Insurance,2024-01-20,Faridabad Car Service
+Punjab28CD2345,Punjab,Amritsar RTO,Maruti Suzuki,Ignis,2020,34000,HDFC Ergo Insurance,2024-02-12,Amritsar Auto Works
+Bihar29EF6789,Bihar,Gaya RTO,Tata,Tiago NRG,2021,27000,United India Insurance,2024-03-05,Gaya Motors
+Odisha30GH1234,Odisha,Cuttack RTO,Honda,City ZX,2018,72000,National Insurance,2024-01-28,Cuttack Auto Care
+Assam31IJ5678,Assam,Dibrugarh RTO,Maruti Suzuki,Celerio,2020,31000,Bajaj Allianz Insurance,2024-02-20,Dibrugarh Motors
+Kerala32KL8901,Kerala,Kochi RTO,Hyundai,i20,2019,41000,ICICI Lombard Insurance,2024-03-10,Kochi Auto Works
+Telangana33MN2345,Telangana,Warangal RTO,Tata,Tigor,2020,35000,HDFC Ergo Insurance,2024-01-15,Warangal Car Service
+Rajasthan34OP6789,Rajasthan,Ajmer RTO,Maruti Suzuki,Baleno,2018,63000,United India Insurance,2024-02-25,Ajmer Motors
+Gujarat35QR1234,Gujarat,Vadodara RTO,Honda,WR-V,2019,48000,National Insurance,2024-03-18,Vadodara Auto Works
+Maharashtra36ST5678,Maharashtra,Nagpur RTO,Tiago,Nexon,2021,22000,Bajaj Allianz Insurance,2024-01-08,Nagpur Motors
+Delhi37UV8901,Delhi,Noida RTO,Hyundai,Venue,2020,38000,ICICI Lombard Insurance,2024-02-12,Noida Car Service
+Karnataka38WX2345,Karnataka,Mangalore RTO,Maruti Suzuki,Swift,2019,45000,HDFC Ergo Insurance,2024-03-22,Mangalore Auto Works
+Tamil Nadu39YZ6789,Tamil Nadu,Madurai RTO,Honda,Amaze,2018,59000,United India Insurance,2024-01-18,Madurai Motors
+West Bengal40AB1234,West Bengal,Durgapur RTO,Tata,Tiago,2021,26000,National Insurance,2024-02-28,Durgapur Car Service
+Uttar Pradesh41CD5678,Uttar Pradesh,Agra RTO,Maruti Suzuki,Dzire,2019,41000,Bajaj Allianz Insurance,2024-03-12,Agra Auto Works
+Rajasthan42EF8901,Rajasthan,Jodhpur RTO,Hyundai,Grand i10 Nios,2020,33000,ICICI Lombard Insurance,2024-01-22,Jodhpur Motors
+Madhya Pradesh43GH2345,Madhya Pradesh,Gwalior RTO,Tata,Punch,2021,24000,HDFC Ergo Insurance,2024-02-15,Gwalior Car Service
+Haryana44IJ6789,Haryana,Panipat RTO,Honda,WR-V,2019,47000,United India Insurance,2024-03-08,Panipat Auto Works
+Punjab45KL1234,Punjab,Ludhiana RTO,Maruti Suzuki,WagonR,2018,68000,National Insurance,2024-01-30,Ludhiana Motors
+Bihar46MN5678,Bihar,Bhagalpur RTO,Tiago,Altroz,2020,36000,Bajaj Allianz Insurance,2024-02-20,Bhagalpur Car Service
+Odisha47OP8901,Odisha,Rourkela RTO,Honda,City,2017,82000,ICICI Lombard Insurance,2024-03-15,Rourkela Auto Works
+Assam48QR2345,Assam,Silchar RTO,Maruti Suzuki,Ertiga,2019,51000,HDFC Ergo Insurance,2024-01-12,Silchar Motors
+Kerala49ST6789,Kerala,Kozhikode RTO,Hyundai,Creta,2020,38000,United India Insurance,2024-02-25,Kozhikode Car Service
+Telangana50UV1234,Telangana,Nizamabad RTO,Tata,Safari,2021,28000,National Insurance,2024-03-18,Nizamabad Motors
